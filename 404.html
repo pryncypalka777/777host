@@ -1,1 +1,307 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>404 - Nie znaleziono | 777host</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            max-width: 100vw;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #2d1b4e 0%, #3d2863 50%, #4d3573 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .glow-effect {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(186, 85, 211, 0.2), transparent 70%);
+            filter: blur(80px);
+            animation: glow 8s ease-in-out infinite alternate;
+        }
+
+        .glow-1 {
+            top: -200px;
+            left: -200px;
+        }
+
+        .glow-2 {
+            bottom: -200px;
+            right: -200px;
+        }
+
+        @keyframes glow {
+            from { opacity: 0.5; transform: scale(1); }
+            to { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1000px;
+            width: 100%;
+            user-select: none;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .error-code {
+            font-size: 12rem;
+            font-weight: 700;
+            letter-spacing: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #e8d5f2 30%, #d8a8e8 60%, #c88ee0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            animation: fadeIn 0.8s ease;
+            text-shadow: 0 0 60px rgba(200, 142, 224, 0.4);
+            line-height: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .error-message {
+            font-size: 2rem;
+            color: #d8bfd8;
+            font-weight: 500;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease;
+            animation-delay: 0.2s;
+            animation-fill-mode: both;
+            text-transform: uppercase;
+        }
+
+        .error-description {
+            font-size: 1.2rem;
+            color: #e8d5f2;
+            font-weight: 400;
+            margin-bottom: 50px;
+            line-height: 1.6;
+            animation: fadeIn 1.2s ease;
+            animation-delay: 0.4s;
+            animation-fill-mode: both;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: block;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #ba55d3 0%, #9370db 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(186, 85, 211, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 1.4s ease;
+            animation-delay: 0.6s;
+            animation-fill-mode: both;
+            position: relative;
+            overflow: hidden;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+
+        .cta-button:hover::after {
+            width: 400px;
+            height: 400px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(186, 85, 211, 0.6);
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-small {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, #ffffff 0%, #e8d5f2 30%, #d8a8e8 60%, #c88ee0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 60px;
+            animation: fadeIn 0.6s ease;
+            opacity: 0.8;
+        }
+
+        footer {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            color: #6b7280;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            z-index: 10;
+            user-select: none;
+        }
+
+        .floating-circles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(216, 168, 232, 0.15), rgba(186, 85, 211, 0.05));
+            animation: floatCircle 15s infinite ease-in-out;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 5s;
+        }
+
+        .circle-3 {
+            width: 250px;
+            height: 250px;
+            bottom: 10%;
+            left: 15%;
+            animation-delay: 10s;
+        }
+
+        @keyframes floatCircle {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            33% {
+                transform: translate(20px, -20px);
+            }
+            66% {
+                transform: translate(-20px, 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 8rem;
+                letter-spacing: 10px;
+            }
+
+            .error-message {
+                font-size: 1.4rem;
+                letter-spacing: 2px;
+            }
+
+            .error-description {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 0.9rem;
+                width: 90%;
+                max-width: 350px;
+            }
+
+            .logo-small {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-effect glow-1"></div>
+    <div class="glow-effect glow-2"></div>
+
+    <div class="floating-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <div class="container">
+        <!--<div class="logo-small">777host</div>-->
+        
+        <h1 class="error-code">404</h1>
+        <h2 class="error-message">Nie znaleziono strony</h2>
+        
+        <p class="error-description">
+            Strona, której szukasz, nie istnieje lub została przeniesiona. Sprawdź adres URL lub wróć do strony głównej.
+        </p>
+        
+        <a href="./" class="cta-button">
+            <span><i class="fas fa-home"></i> Strona główna</span>
+        </a>
+    </div>
+
+    <footer>
+        <p>made by @pryncypalka & @zetkatv<br>&copy; 2025 777host.pl - Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
